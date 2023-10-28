@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- FONT AWESOME -->
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" 
+    />
+
+    <!-- SWIPER JS -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+<!-- MODAL UNDER CONSTRACT -->
+
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+    
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">warning</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+        
+            <!-- Modal body -->
+            <div class="modal-body">
+                This Features is under constraction
+            </div>
+        
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+        
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar">
+            <a class="brand-name" href=""><h1>Uncle<span>Explorer</span></h1></a>
+    
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home-menu">Home</a></li>
+                <li class="nav-item"><a href="#explore-menu">Explore</a></li>
+                <li class="nav-item"><a href="#travel-menu">Travel</a></li>
+                <li class="nav-item"><a href="#guide-menu">Guide</a></li>
+                <li class="nav-item"><a href="#feedback-menu">Testimonial</a></li>
+            </ul>
+    
+            <div class="btn-login-signup">
+                <a class="btn-login" href="" data-bs-toggle="modal" data-bs-target="#myModal">Log In</a>
+                <button class="btn-signup" data-bs-toggle="modal" data-bs-target="#myModal">Sign Up</button>
+            </div>
+    
+            <div id="btn-bars" onclick="bars()">
+                <i class="fa-solid fa-bars fa-2xl btn-icon-bars"></i>
+            </div>
+        </nav>
+    
+        <div class="dropdown-menu">
+            <li class="nav-item"><a href="#">Home</a></li>
+            <li class="nav-item"><a href="#explore-menu">Explore</a></li>
+            <li class="nav-item"><a href="travel-menu">Travel</a></li>
+            <li class="nav-item"><a href="guide-menu">Guide</a></li>
+            <li class="nav-item"><a href="feedback-menu">Testimonialt</a></li>
+            <li class="nav-item"><a class="btn-login" href="" data-bs-toggle="modal" data-bs-target="#myModal">Log In</a></li>
+            <li class=""><button class="btn-signup" data-bs-toggle="modal" data-bs-target="#myModal">Sign Up</button></li>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-text">
+            <p class="hero-title">Start your unforgettable <br> journey with us.</p>
+            <p class="hero-paragraph">The best travel for your journey begins now.</p>
+        </div>
+        
+        <div class="content-block">
+            <div class="col-group">
+                <div class="row">
+                    <div class="col">
+                        <label for="destination">DESTINATION</label>
+                        <input type="text" name="destination">
+                    </div>
+        
+                    <div class="col">
+                        <label for="person">PERSON</label>
+                        <input type="number" name="person" id="">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label for="checkin">CHECK IN</label>
+                        <input type="date" name="checkin" id="">
+                    </div>
+        
+                    <div class="col">
+                        <label for="checkout">CHECK OUT</label>
+                        <input type="date" name="checkout" id="">
+                    </div>
+                </div>
+    
+            </div>
+            
+            <button class="btn-bookNow "data-bs-toggle="modal" data-bs-target="#myModal">Book Now</button>
+        </div>
+    </section>
+
+    <!-- EXPLORE SECTION -->
+    <section class="explore-section" id="explore-menu">
+        <div class="title">
+            <div class="title-block">
+                <div class="title-design">
+                    <h2>Popular Destination</h2>
+                    <hr>
+                </div>
+                <p>Most popular destination here in the Rodriguez, Rizal.</p>
+            </div>
+
+            <div class="btn-arrow btn-explore">
+                <div class="btn-arrow-left btn-explore">
+                    <i class="fa-solid fa-less-than"></i>
+                </div>
+                <div class="btn-arrow-right btn-explore">
+                    <i class="fa-solid fa-greater-than"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper mySwiper" id="cards-container">
+            <div class="swiper-wrapper" id="cards-wrapper">
+                <div class="swiper-slide explore-card-1" id="card">
+                    <h3 class="image-name">Falls</h3>
+                    <h3 class="image-location">Montalban, Rizal</h3>
+                </div>
+
+                <div class="swiper-slide explore-card-2" id="card">
+                    <h3 class="image-name">Cave</h3>
+                    <h3 class="image-location">San Rafael, Montalban</h3>
+                </div>
+
+                <div class="swiper-slide explore-card-3" id="card">
+                    <h3 class="image-name">Jets View Deck</h3>
+                    <h3 class="image-location">Mt. Parawagan, San Rafael, Montalban</h3>
+                </div>
+
+                <div class="swiper-slide explore-card-4" id="card">
+                    <h3 class="image-name">Town Center</h3>
+                    <h3 class="image-location">San Jose, Montalban</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRAVEL SECTION -->
+    <section class="travel-section" id="travel-menu">
+        <div class="title">
+            <div class="btn-arrow btn-travel">
+                <div class="btn-arrow-left btn-travel">
+                    <i class="fa-solid fa-less-than"></i>
+                </div>
+                <div class="btn-arrow-right btn-travel">
+                    <i class="fa-solid fa-greater-than"></i>
+                </div>
+            </div>
+
+            <div class="title-block">
+                <div class="title-design travel">
+                    <h2>Special Offer</h2>
+                    <hr>
+                </div>
+                <p>Check out our special offer and discounts.</p>
+            </div>
+        </div>
+
+        <div class="swiper swiperTravel" id="cards-container">
+            <div class="swiper-wrapper" id="cards-swiper">
+                <div class="swiper-slide" id="card-travel">
+                    <div class="image-container card-1"></div>
+                    <div class="text-block">
+                        <h3>MT. BINICAYAN</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                        </ul>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui unde ex assumenda. Ullam, consequuntur minima saepe tempora architecto, quae accusamus cum amet suscipit modi ex, deserunt molestias omnis ab velit.
+                        </p>
+                        <div class="details">
+                            <h4>from<span>$73.5</span></h4>
+                            <a href=""><button data-bs-toggle="modal" data-bs-target="#myModal">Book Now</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide " id="card-travel">
+                    <div class="image-container card-2"></div>
+                    <div class="text-block">
+                        <h3>MT. PAMITINAN</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                        </ul>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga atque soluta a modi quis, distinctio deleniti iure dolores, pariatur sed veniam illum ullam neque voluptas alias nam, incidunt ea ut!
+                        </p>
+                        <div class="details">
+                            <h4>from<span>$78.5</span></h4>
+                            <button data-bs-toggle="modal" data-bs-target="#myModal">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide" id="card-travel">
+                    <div class="image-container card-3"></div>
+                    <div class="text-block">
+                        <h3>MT. LAGYO</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                        </ul>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam nisi ad sapiente ullam modi placeat illum impedit earum fugiat id voluptatibus ipsum eos qui, quo repellat ut deleniti aliquid velit!
+                        </p>
+                        <div class="details">
+                            <h4>from<span>$73.5</span></h4>
+                            <button data-bs-toggle="modal" data-bs-target="#myModal">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide" id="card-travel">
+                    <div class="image-container card-4"></div>
+                    <div class="text-block">
+                        <h3>MT. HAPUNANG BANOY</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                        </ul>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum assumenda quis dolorem saepe praesentium velit aliquam! Quidem quasi vitae quis laborum repudiandae neque consequuntur unde doloribus! Sunt sequi maiores doloremque?
+                        </p>
+                        <div class="details">
+                            <h4>from<span>$73.5</span></h4>
+                            <button data-bs-toggle="modal" data-bs-target="#myModal">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide" id="card-travel">
+                    <div class="image-container card-5"></div>
+                    <div class="text-block">
+                        <h3>MT. PARAWAGAN</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                        </ul>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel voluptatum commodi architecto accusamus nam dolores facere, tenetur ratione quod reiciendis magnam dolor eaque, earum aliquam tempore aliquid deserunt placeat quidem.
+                        </p>
+                        <div class="details">
+                            <h4>from<span>$73.5</span></h4>
+                            <button>Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide" id="card-travel">
+                    <div class="image-container card-6"></div>
+                    <div class="text-block">
+                        <h3>MT. MATAMIS NA LUYA</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                        </ul>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel voluptatum commodi architecto accusamus nam dolores facere, tenetur ratione quod reiciendis magnam dolor eaque, earum aliquam tempore aliquid deserunt placeat quidem.
+                        </p>
+                        <div class="details">
+                            <h4>from<span>$73.5</span></h4>
+                            <button data-bs-toggle="modal" data-bs-target="#myModal">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide" id="card-travel">
+                    <div class="image-container card-7"></div>
+                    <div class="text-block">
+                        <h3>MT. AYAAS</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                        </ul>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel voluptatum commodi architecto accusamus nam dolores facere, tenetur ratione quod reiciendis magnam dolor eaque, earum aliquam tempore aliquid deserunt placeat quidem.
+                        </p>
+                        <div class="details">
+                            <h4>from<span>$73.5</span></h4>
+                            <button data-bs-toggle="modal" data-bs-target="#myModal">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide" id="card-travel">
+                    <div class="image-container card-8"></div>
+                    <div class="text-block">
+                        <h3>MT. ORO</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                        </ul>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel voluptatum commodi architecto accusamus nam dolores facere, tenetur ratione quod reiciendis magnam dolor eaque, earum aliquam tempore aliquid deserunt placeat quidem.
+                        </p>
+                        <div class="details">
+                            <h4>from<span>$73.5</span></h4>
+                            <button data-bs-toggle="modal" data-bs-target="#myModal">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide" id="card-travel">
+                    <div class="image-container card-9"></div>
+                    <div class="text-block">
+                        <h3>MT. SIPIT ULANG</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                        </ul>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel voluptatum commodi architecto accusamus nam dolores facere, tenetur ratione quod reiciendis magnam dolor eaque, earum aliquam tempore aliquid deserunt placeat quidem.
+                        </p>
+                        <div class="details">
+                            <h4>from<span>$73.5</span></h4>
+                            <button data-bs-toggle="modal" data-bs-target="#myModal"Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide" id="card-travel">
+                    <div class="image-container card-10"></div>
+                    <div class="text-block">
+                        <h3>MT. LUBOG</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                        </ul>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel voluptatum commodi architecto accusamus nam dolores facere, tenetur ratione quod reiciendis magnam dolor eaque, earum aliquam tempore aliquid deserunt placeat quidem.
+                        </p>
+                        <div class="details">
+                            <h4>from<span>$73.5</span></h4>
+                            <button>Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide" id="card-travel">
+                    <div class="image-container card-11"></div>
+                    <div class="text-block">
+                        <h3>MT. BALAGBAG</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                        </ul>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel voluptatum commodi architecto accusamus nam dolores facere, tenetur ratione quod reiciendis magnam dolor eaque, earum aliquam tempore aliquid deserunt placeat quidem.
+                        </p>
+                        <div class="details">
+                            <h4>from<span>$73.5</span></h4>
+                            <button> data-bs-toggle="modal" data-bs-target="#myModal"Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide" id="card-travel">
+                    <div class="image-container card-5"></div>
+                    <div class="text-block">
+                        <h3>MT. PARAWAGAN</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                        </ul>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel voluptatum commodi architecto accusamus nam dolores facere, tenetur ratione quod reiciendis magnam dolor eaque, earum aliquam tempore aliquid deserunt placeat quidem.
+                        </p>
+                        <div class="details">
+                            <h4>from<span>$73.5</span></h4>
+                            <button data-bs-toggle="modal" data-bs-target="#myModal">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide" id="card-travel">
+                    <div class="image-container card-5"></div>
+                    <div class="text-block">
+                        <h3>MT. PARAWAGAN</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                        </ul>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel voluptatum commodi architecto accusamus nam dolores facere, tenetur ratione quod reiciendis magnam dolor eaque, earum aliquam tempore aliquid deserunt placeat quidem.
+                        </p>
+                        <div class="details">
+                            <h4>from<span>$73.5</span></h4>
+                            <button>Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide" id="card-travel">
+                    <div class="image-container card-5"></div>
+                    <div class="text-block">
+                        <h3>MT. PARAWAGAN</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                        </ul>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel voluptatum commodi architecto accusamus nam dolores facere, tenetur ratione quod reiciendis magnam dolor eaque, earum aliquam tempore aliquid deserunt placeat quidem.
+                        </p>
+                        <div class="details">
+                            <h4>from<span>$73.5</span></h4>
+                            <button data-bs-toggle="modal" data-bs-target="#myModal">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+    <!-- TOUR GUIDE -->
+    <section class="tourGuide-section" id="guide-menu">
+        <div class="title">
+            <div class="title-block">
+                <div class="title-design">
+                    <h2>Tour Guide</h2>
+                    <hr>
+                </div>
+                <p>Our best and handsome tour guide.</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="imageContainer">
+
+            </div>
+            
+            <div class="content-text">
+                <h3>Uncle the Explorer</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam optio non consequuntur quis ut inventore nesciunt nihil ipsum pariatur laborum, provident temporibus architecto voluptatibus rem, asperiores quam ducimus! Qui, libero?<p>
+
+                <h4>Follow me on:</h4>
+                <ul>
+                    <li><i class="fa-brands fa-facebook""></i></li>
+                    <li><i class="fa-brands fa-instagram"></i></li>
+                    <li><i class="fa-brands fa-youtube"></i></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- DESTINATION GALLERY -->
+    <section class="gallery-section">
+        <div class="title">
+            <div class="title-block">
+                <div class="title-design">
+                    <h2>Destination Gallery</h2>
+                    <hr>
+                </div>
+                <p>Our photo gallery on trip.</p>
+            </div>
+
+            <div class="btn-arrow btn-gallery">
+                <div class="btn-arrow-left btn-gallery">
+                    <i class="fa-solid fa-less-than"></i>
+                </div>
+                <div class="btn-arrow-right btn-gallery">
+                    <i class="fa-solid fa-greater-than"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper swiperGallery" id="cards-container">
+            <div class="swiper-wrapper" id="gallery-swiper">
+                <div class="swiper-slide gallery-card-1" id="card-gallery"></div>
+                <div class="swiper-slide gallery-card-2" id="card-gallery"></div>
+                <div class="swiper-slide gallery-card-3" id="card-gallery"></div>
+                <div class="swiper-slide gallery-card-4" id="card-gallery"></div>
+                <div class="swiper-slide gallery-card-5" id="card-gallery"></div>
+                <div class="swiper-slide gallery-card-1" id="card-gallery"></div>
+                <div class="swiper-slide gallery-card-1" id="card-gallery"></div>
+                <div class="swiper-slide gallery-card-1" id="card-gallery"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL SECTION -->
+    <section class="testimonial-section">
+        <div class="title">
+            <div class="title-block">
+                <div class="title-design">
+                    <h2>Traveler's Experience</h2>
+                    <hr>
+                </div>
+                <p>Here some awesome feedback from our travelers.</p>
+            </div>
+        </div>
+
+        <div class="swiper swiperTestimonial" id="cards-container">
+            <div class="swiper-wrapper" id="testimonial-swiper">
+                <div class="swiper-slide card-1" id="card">
+                    
+                    <p>
+                        But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system and expound the actual teachings of the great explorer of the truth, the master- builder of human happiness.
+                    </p>
+
+                    <ul class="rating">
+                        <li class="star-item">
+                            <i class="fa-solid fa-star"></i>
+                        </li>
+
+                        <li class="star-item">
+                            <i class="fa-solid fa-star"></i>
+                        </li>
+
+                        <li class="star-item">
+                            <i class="fa-solid fa-star"></i>
+                        </li>
+
+                        <li class="star-item">
+                            <i class="fa-solid fa-star"></i>
+                        </li>
+
+                        <li class="star-item">
+                            <i class="fa-solid fa-star"></i>
+                        </li>
+                    </ul>
+
+                    <div class="info">
+                        <div class="info-name-occup">
+                            <h3>John Paul Sauco</h3>
+                            <h4>Web Designer</h4>
+                        </div>
+
+                        <div class="avatar avatar-1"></div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide card-1" id="card">
+                    
+                    <p>
+                        But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system and expound the actual teachings of the great explorer of the truth, the master- builder of human happiness.
+                    </p>
+
+                    <ul class="rating">
+                        <li class="star-item">
+                            <i class="fa-solid fa-star"></i>
+                        </li>
+
+                        <li class="star-item">
+                            <i class="fa-solid fa-star"></i>
+                        </li>
+
+                        <li class="star-item">
+                            <i class="fa-solid fa-star"></i>
+                        </li>
+
+                        <li class="star-item">
+                            <i class="fa-solid fa-star"></i>
+                        </li>
+
+                        <li class="star-item">
+                            <i class="fa-solid fa-star"></i>
+                        </li>
+                    </ul>
+
+                    <div class="info">
+                        <div class="info-name-occup">
+                            <h3>Albert Santelices</h3>
+                            <h4>Frontend Developer</h4>
+                        </div>
+
+                        <div class="avatar avatar-2"></div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide card-1" id="card">
+                    
+                    <p>
+                        But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system and expound the actual teachings of the great explorer of the truth, the master- builder of human happiness.
+                    </p>
+
+                    <ul class="rating">
+                        <li class="star-item">
+                            <i class="fa-solid fa-star"></i>
+                        </li>
+
+                        <li class="star-item">
+                            <i class="fa-solid fa-star"></i>
+                        </li>
+
+                        <li class="star-item">
+                            <i class="fa-solid fa-star"></i>
+                        </li>
+
+                        <li class="star-item">
+                            <i class="fa-solid fa-star"></i>
+                        </li>
+
+                        <li class="star-item">
+                            <i class="fa-solid fa-star"></i>
+                        </li>
+                    </ul>
+
+                    <div class="info">
+                        <div class="info-name-occup">
+                            <h3>Danielito Septimo</h3>
+                            <h4>Backend Developer</h4>
+                        </div>
+
+                        <div class="avatar avatar-3"></div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide card-1" id="card">
+                    
+                    <p>
+                        But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system and expound the actual teachings of the great explorer of the truth, the master- builder of human happiness.
+                    </p>
+
+                    <ul class="rating">
+                        <li class="star-item">
+                            <i class="fa-solid fa-star"></i>
+                        </li>
+
+                        <li class="star-item">
+                            <i class="fa-solid fa-star"></i>
+                        </li>
+
+                        <li class="star-item">
+                            <i class="fa-solid fa-star"></i>
+                        </li>
+
+                        <li class="star-item">
+                            <i class="fa-solid fa-star"></i>
+                        </li>
+
+                        <li class="star-item">
+                            <i class="fa-solid fa-star"></i>
+                        </li>
+                    </ul>
+
+                    <div class="info">
+                        <div class="info-name-occup">
+                            <h3>Adrian Galon</h3>
+                            <h4>Software Engineer</h4>
+                        </div>
+
+                        <div class="avatar avatar-4"></div>
+                    </div>
+                </div>
+            </div>           
+        </div>
+
+        <div class="btn-arrow btn-testimonial">
+            <div class="btn-arrow-left btn-testimonial">
+                <i class="fa-solid fa-less-than"></i>
+            </div>
+            <div class="btn-arrow-right btn-testimonial">
+                <i class="fa-solid fa-greater-than"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="logo">
+                <h4>Uncle<span>Explorer</span></h4>
+                <p>Copyright © UncleExplorer 2023 All rights reserved</p>
+            </div>
+
+            <div class="menu">
+                <h4>Menu</h4>
+                <ul>
+                    <li>Home</li>
+                    <li>Explore</li>
+                    <li>Travel</li>
+                    <li>Gallery</li>
+                    <li>Testimonial</li>
+                </ul>
+            </div>
+
+            <div class="information">
+                <h4>Informantion</h4>
+                <ul>
+                    <li>Destination</li>
+                    <li>Supports</li>
+                    <li>Terms & Conditions</li>
+                    <li>Privacy</li>
+                </ul>
+            </div>
+
+            <div class="contact">
+                <h4>Contact</h4>
+                <ul>
+                    <li>+639123456789</li>
+                    <li>email@gmail.com</li>
+                    <li>St. 143, Di Ka minahal</li>
+                </ul>
+            </div>
+
+            <div class="follow">
+                <h4>Follow us on</h4>
+                <ul>
+                    <li><i class="fa-brands fa-facebook""></i></li>
+                    <li><i class="fa-brands fa-instagram"></i></li>
+                    <li><i class="fa-brands fa-youtube"></i></li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="/swiper-bundle.min.js"></script>
+    <script src="/script.js"></script>
+</body>
+</html>

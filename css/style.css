@@ -1,0 +1,1136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    width: 1920px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #803C2C;
+}
+
+.navbarr a:hover {
+    color: #FF7757;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 182px;
+    border: 1px solid red;
+    background-color: #FFE4DD;
+    width: 100%;
+}
+
+.navbar .brand-name span {
+    color: #FF7757;
+}
+
+.navbar .nav-menu {
+    display: flex;
+    gap: 32px;
+    font-size: 20px;
+    
+}
+
+.nav-item {
+    list-style-type: none;
+}
+
+.btn-login-signup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    font-size: 20px;
+}
+
+.btn-signup {
+    padding: 20px 32px;
+    border-radius: 12px;
+    border: none;
+    background-color: #FF7757;
+}
+
+/* DROPDOWN MENU */
+
+#btn-bars{
+    display: none;
+    color: #803C2C;
+}
+
+#btn-bars:hover {
+    color: #FF7757;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 102px;
+    right: 6px;
+    width: 300px;
+    background-color: #FFE4DD;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 0;
+}
+
+.dropdown-menu.open {
+    height: auto;
+}
+
+.dropdown-menu li {
+    display: flex;
+    justify-content: center;
+    padding: 7px;
+}
+
+.dropdown-menu .nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.dropdown-menu .btn-signup {
+    width: 100%;
+}
+
+/* DROPDOWN MENU */
+
+/* HERO SECTION */
+
+.hero-section {
+    width: 100%;
+    height: 1194px;
+    padding: 100px 0;
+    background-image: url(/images/background-image.jpg);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 170px;
+    flex-shrink: 0;
+}
+
+.hero-text {
+    text-align: center;
+    margin-top: 142px;
+    margin-bottom: 170px;
+}
+
+.hero-text .hero-title {
+    font-size: 84px;
+}
+
+.hero-paragraph {
+    font-size: 24px;
+}
+
+.content-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFF;
+    border-radius: 0px 20px 20px 0px;
+    gap: 100px;
+    width: 1473px;
+    margin-bottom: 270px;
+}
+
+.col-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    flex: 1 0 0;
+    margin-left: 182px;
+}
+
+.col-group .row {
+    display: flex;
+    gap: 40px;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.col label {
+    color: #767E86;
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.col input {
+    display: flex;
+    padding-bottom: 0px;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.content-block button {
+    display: flex;
+    width: 170px;
+    align-self: stretch;
+    flex-shrink: 0;
+    font-size: 36px;
+    padding: 60px 20px;
+    border: none;
+    border-radius: 0px 20px 20px 0px;
+    background-color: #FF7757;
+    cursor: pointer;
+}
+
+/* EXPLORE SECTION */
+
+.explore-section {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    padding: 140px 182px 140px 182px;
+    gap: 100px;
+}
+
+.title {
+    display: flex;
+    padding-right: 0px;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    align-self: stretch;
+}
+
+
+.title-block {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.title-design {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.title-design h2 {
+    color: #172432;
+    font-family: Playfair Display;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.title-block hr {
+    width: 365px;
+    height: 3px;
+    background: #FF7757;
+    border: none;
+}
+
+.title-block p {
+    color: #767E86;
+    font-family: Rubik;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.btn-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.btn-arrow .btn-arrow-left, .btn-arrow-right {
+    display: flex;
+    justify-content: center;
+    padding: 28px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    border-radius: 12px;
+    color: #fff;
+}
+
+.btn-arrow-left {
+    background-color: #172432;
+}
+
+.btn-arrow-right {
+    background-color: #FF7757;
+}
+
+/* EXPLORE CARD */
+.explore-card-1 {
+    background: linear-gradient(0deg, rgba(255, 119, 87, 0.10) 0%, rgba(255, 119, 87, 0.10) 100%), url(/images/falls.webp), lightgray 50% / cover no-repeat;
+}
+
+.explore-card-2 {
+    background: linear-gradient(0deg, rgba(255, 119, 87, 0.10) 0%, rgba(255, 119, 87, 0.10) 100%), url(/images/cave.webp), lightgray 50% / cover no-repeat;
+}
+
+.explore-card-3 {
+    background: linear-gradient(0deg, rgba(255, 119, 87, 0.10) 0%, rgba(255, 119, 87, 0.10) 100%), url(/images/jetsview.jpg), lightgray 50% / cover no-repeat;
+}
+
+.explore-card-4 {
+    background: linear-gradient(0deg, rgba(255, 119, 87, 0.10) 0%, rgba(255, 119, 87, 0.10) 100%), url(/images/town-center.jpg), lightgray 50% / cover no-repeat;
+}
+/* CARDS */
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+#cards-wrapper {
+    display: flex;
+    gap: 0;
+}
+
+#card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 497px;
+    height: 661px;
+    padding: 40px 24px;
+    border-radius: 26px;
+    background-color: red;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* TRAVEL SECTION */
+.travel-section {
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding: 140px 182px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 100px;
+}
+
+.travel-section .title-block .travel {
+    display: flex;
+    align-items: end;
+}
+
+.travel-section .title-block hr {
+    width: 241px;
+    height: 3px;
+}
+
+#cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+    align-self: stretch;
+}
+
+#cards-container #card-travel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 0 0;
+}
+
+#card-travel .image-container {
+    display: flex;
+    width: 497px;
+    height: 286px;
+    padding: 40px 24px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background-color: red;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    border-radius: 26px 26px 0px 0px;
+}
+#card-travel .image-container img {
+    width: 100%;
+    height: 100%;
+}
+
+#card-travel .text-block {
+    display: flex;
+    padding: 40px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+    width: 100%;
+    border-radius: 0px 0px 26px 26px;
+    background: #FFF8F1;
+}
+
+.text-block ul {
+    display: flex;
+    gap: 4px;
+    list-style-type: none;
+    margin-top: 8px
+}
+
+.text-block ul li i {
+    color: #FFC107;
+    font-size: 24px;
+}
+
+.text-block p{
+    text-align: start;
+    margin: 24px 0px;
+}
+
+.text-block .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.details h4{
+    color: #767E86;
+    font-size: 20px;
+}
+
+.details h4 span {
+    color: #FF7757;
+    font-size: 40px;
+    margin-left: 8px;
+}
+
+.details button {
+    display: flex;
+    padding: 20px 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    align-self: stretch;
+    border-radius: 12px;
+    background: #FF7654;
+    border: none;
+}
+
+/* TRAVEL CARD IMAGE */
+.card-1 {
+    background-image: url(/images/mt-binicayan.webp);
+}
+
+.card-2 {
+    background-image: url(/images/mt-pamitinan.jpg);
+}
+
+.card-3 {
+    background-image: url(/images/mt-lagyo.jpg);
+}
+
+.card-4 {
+    background-image: url(/images/mt-hapunang-banoi.jpg);
+}
+
+.card-5 {
+    background-image: url(/images/mt-parawagan.jpg);
+}
+
+.card-6 {
+    background-image: url(/images/mt-matamis-na-luya.jpg)
+}
+
+.card-7 {
+    background-image: url(/images/mt-ayaas.JPG);
+}
+
+.card-8 {
+    background-image: url(/images/mt-oro_1.jpg);
+}
+
+.card-9 {
+    background-image: url(/images/mt-sipit-ulang.jpg);
+}
+
+.card-10 {
+    background-image: url(/images/mt-lubog_1.jpg);
+}
+
+.card-11 {
+    background-image: url(/images/mt-balagbag.jpg);
+}
+
+/* TOURGUIDE SECTION */
+
+.tourGuide-section {
+    display: flex;
+    width: 100%;
+    padding: 140px 182px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 100px;
+}
+
+.tourGuide-section hr {
+    width: 200px;
+}
+
+.tourGuide-section .content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.content .imageContainer {
+    display: flex;
+    width: 762px;
+    height: 873px;
+    padding: 4px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    background-image: url(/images/tour-guide-photo-1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 26px;
+    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(<path-to-image>), lightgray 50% / cover no-repeat; */
+}
+
+.content .content-text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    color: #172432;
+    width: 50%;
+}
+
+.content-text h3 {
+    font-size: 54px;
+}
+
+.content-text p {
+    font-size: 24px;
+    line-height: 52px;
+}
+
+.content h4 {
+    font-size: 20px;
+}
+
+.content-text ul {
+    display: flex;
+    gap: 32px;
+    list-style-type: none;
+}
+
+.content-text ul li i {
+    font-size: 36px;
+}
+
+/* DESTINATION GALLERY */
+
+.gallery-section {
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding: 140px 182px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 100px;
+}
+
+
+
+#card-gallery {
+    height: 570px;
+    width: 365px;
+    background-color: red;
+    border-radius: 26px;
+    padding: 40px 24px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.gallery-card-1 {
+    background-image: url(/images/gallery-1\ \(1\).jpg);
+}
+
+.gallery-card-2 {
+    background-image: url(/images/gallery-1\ \(2\).jpg);
+}
+
+.gallery-card-3 {
+    background-image: url(/images/gallery-1\ \(3\).jpg);
+}
+
+.gallery-card-4 {
+    background-image: url(/images/gallery-2\ \(1\).jpg);
+}
+
+.gallery-card-6 {
+    background-image: url(/images/gallery-2\ \(2\).jpg);
+}
+
+.gallery-card-6 {
+    background-image: url(/images/gallery-2\ \(3\).jpg);
+}
+
+/* TESTIMONISL SECTION */
+
+.testimonial-section {
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding: 140px 182px 240px 182px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 160px;
+}
+
+.testimonial-section #testimonial-swiper {
+    display: flex;
+    align-self: stretch;
+}
+
+#testimonial-swiper #card {
+    display: flex;
+    width: 663px;
+    height: 331px;
+    padding: 60px 40px 40px 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    color: #767E86;
+    border-radius: 12px;
+    background: #F5F6F7;
+}
+
+#card p {
+    font-size: 18px;
+}
+
+#card .rating {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+#card .rating .star-item {
+    list-style-type: none;
+    color: #FFC107;
+}
+
+#card .info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: start;
+}
+
+#card .info .info-name-occup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#card .info .avatar {
+    border-radius: 100%;
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: blue;
+}
+
+/* AVATAR PROFILE */
+
+.avatar-1 {
+    background-image: url(/images/avatar-1.jpg);
+}
+
+.avatar-2 {
+    background-image: url(/images/avatar-2.jpg);
+}
+
+.avatar-3 {
+    background-image: url(/images/avatar-3.jpg);
+}
+
+.avatar-4 {
+    background-image: url(/images/avatar-4.jpg);
+}
+
+/* FOOTER SECTION */
+.footer-section {
+    display: flex;
+    width: 100%;
+    padding: 240px 182px 140px 182px;
+    align-items: center;
+    gap: 4px;
+    background: #172432;
+}
+
+.footer-section .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1 0 0;
+    color: #FFF;
+}
+
+.footer-content .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.footer-content .logo h4 {
+    font-size: 24px;
+}
+
+.footer-content .logo span {
+    color: #FF7757;
+}
+
+.footer-content .menu, .information, .contact, .follow {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.footer-content .menu h4, .information h4, .contact h4, .follow h4{
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.footer-content .menu ul, .information ul, .contact ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    list-style-type: none;
+}
+
+.footer-content .follow ul {
+    list-style-type: none;
+    display: flex;
+    gap: 24px;
+}
+
+.footer-content .follow ul li i{
+    font-size: 32px;
+}
+
+
+/* MEDIUM SCREEN */
+
+@media only screen and (max-width: 1440px) {
+    body {
+        width: 1440px;
+    }
+
+    .navbar {
+        padding: 32px;
+    }
+
+    .content-block {
+        width: 1205px;
+    }
+
+    .explore-section {
+        padding: 140px 32px;
+    }
+
+    .travel-section {
+        padding: 140px 32px;
+    }
+
+    .travel-section #cards-swiper {
+        display: flex;
+        gap: 26px;
+    }  
+
+    #card-travel .image-container {
+        height: 286px;
+        width: 419px;
+    }
+
+    .travelGuide-section {
+        padding: 140px 32px;
+    }
+
+    .content .imageContainer {
+        height: 802px;
+        width: 672px;
+    }
+
+    .gallery-section {
+        padding: 140px 32px;
+    }
+
+    #card-gallery {
+        height: 469px;
+    }
+
+    .testimonial-section {
+        padding: 140px 32px 240px 32px;
+    }
+
+    #testimonial-swiper #card {
+        width: 562px;
+    }
+    
+    .footer-section {
+        padding: 240px 32px 140px 32px;
+    }
+}
+
+
+/* SMALL SCREEN */
+
+@media only screen and (max-width: 1152px) {
+    body {
+        width: 1152px;
+    }
+
+    .hero-section {
+        height: 880px;
+        gap: 140px;
+        padding: 200px 0px 100px 0px;
+    }
+
+    .hero-text {
+        margin-left: 100px;
+    }
+    
+    .hero-text .hero-title {
+        font-size: 64px;
+    }
+    
+    .content-block {
+        width: 1056px;
+    }
+    
+    .explore-section {
+        padding: 100px 32px;
+    }
+
+    .explore-section #cards-wrapper {
+        gap: 0;
+    }
+    
+    .travel-section {
+        padding: 100px 32px;
+    }
+
+    .travel-section #cards-swiper {
+        gap: 65px;
+    }
+    
+    #card-travel .image-container {
+        width: 313px;
+        padding: 20px 24px;
+    }
+    
+    #card-travel .text-block {
+        padding: 20px 24px;
+    }
+    
+    .tourGuide-section {
+        padding: 100px 32px;
+    }
+    
+    .content .imageContainer {
+        height: 686px;
+        width: 523px;
+    }
+    
+    .gallery-section {
+        padding: 100px 32px;
+    }
+    
+    #card-gallery {
+        height: 351px;
+    }
+    
+    .testimonial-section {
+        padding: 100px 32px 200px 32px;
+    }
+    
+    #testimonial-swiper #card {
+        width: 500px;
+    }
+
+    #card .info .avatar {
+        height: 60px;
+        width: 60px;
+    }
+    
+    .footer-section {
+        padding: 240px 32px 140px 32px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        width: 768px;
+    }
+
+    .navbar {
+        padding: 32px 20px;
+    }
+    
+    .navbar .nav-menu, .btn-login-signup {
+        display: none;
+    }
+    
+    #btn-bars{
+        display: block;
+    }
+
+    .hero-section {
+        height: 768px;
+        gap: 100px;
+        padding-bottom: 0px;
+    }
+
+    .hero-text .hero-title {
+        font-size: 54px;
+    }
+
+    .hero-paragraph {
+        font-size: 20px;
+    }
+
+    .content-block {
+        width: 659px;
+    }
+
+    .col-group {
+        margin-left: 32px ;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+        align-self: stretch;
+    }
+    
+    .explore-section, .travel-section {
+        padding: 80px 20px;
+    }
+
+    .btn-arrow {
+        position: absolute;
+    }
+
+    .btn-arrow.btn-explore, .btn-travel, .btn-gallery {
+        bottom: -80px;
+        left: 43%;
+    }
+
+    .btn-testimonial {
+        bottom: 60px;
+        left: 43%;
+    }
+
+    .travel-section, .tourGuide-section {
+        margin-top: 160px;
+    }
+
+    .travel-section .title-block .travel {
+        align-items: start;
+    }
+
+    .travel-section #cards-swiper {
+        gap: 82px;
+    }
+
+
+    .tourGuide-section {
+        padding: 80px 20px;
+    }
+
+
+    .tourGuide-section .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content .imageContainer {
+        height: 555px;
+        width: 728px;
+    
+    }
+
+    .content .content-text {
+        width: 100%;
+    }
+
+    .testimonial-section {
+        margin-top: 80px;
+    }
+
+}
+
+
+@media only screen and (max-width: 320px) {
+    body {
+        width: 320px;
+    }
+
+    .navbar {
+        padding: 24px 16px;
+    }
+
+    .hero-section {
+        padding: 0px 16px 100px 16px;
+    }
+
+    .hero-text .hero-title {
+        font-size: 40px;
+    }
+
+    .content-block {
+        width: 288px;
+        flex-direction: column;
+        gap: 60px;
+        border-radius: 0px 0px 16px 16px;
+    }
+
+    .col-group {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .content-block button {
+        justify-content: center;
+        width: 100%;
+        border-radius: 0px 0px 16px 16px;
+        padding: 40px 20px;
+    }
+
+    .explore-section {
+        padding: 80px 16px;
+    }
+
+    .title-design h2 {
+        font-size: 40px;
+    }
+
+    .btn-arrow.btn-explore, .btn-travel, .btn-gallery, .btn-testimonial {
+        bottom: -20px;
+        left: 26%;
+    }
+
+    #card {
+        width: 288px;
+        height: 320px;
+    }
+
+    #card-travel .image-container {
+        width: 288px;
+    }
+
+    #card-travel .text-block {
+        gap: 0;
+    }
+    .text-block .details {
+        align-items: start;
+    }
+    
+    .title-block, .title-block hr {
+        width: 70%;
+    }
+
+    .title-block h3 {
+        font-size: 24px;
+    }
+
+    .travel-section, .tourGuide-section, .tourGuide-section {
+        margin-top: 80px;
+        padding: 80px 16px;
+    }
+
+    .gallery-section, .testimonial-section {
+        margin-top: 0;
+        padding: 80px 16px;
+    }
+
+    .text-block .details {
+        flex-direction: column;
+    }
+    
+    .tourGuide-section .content {
+        align-items: center;
+    }
+
+    .content .imageContainer {
+        width: 288px;
+        height: 314px;
+    }
+
+    .content-text h3 {
+        font-size: 32px;
+    }
+
+    .content-text p {
+        font-size: 16px;
+        line-height: 32px;
+    }
+
+    .content .content-text {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .testimonial-section {
+        gap: 50px;
+        margin-bottom: 50px;
+    }
+
+    .footer-section .footer-content {
+        flex-direction: column;
+        gap: 32px;
+    }
+}

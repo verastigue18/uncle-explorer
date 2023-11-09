@@ -1,793 +1,933 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css">
+/* GLOBAL STYLE */
 
-    <!-- FONT AWESOME -->
-    <link 
-        rel="stylesheet" 
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
-        crossorigin="anonymous" 
-        referrerpolicy="no-referrer" 
-    />
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- SWIPER JS -->
-    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+body {
+    display: flex;
+    flex-direction: column;
+    width: 1920px;
+    background-color: #fff;
+    color: #172432;
+}
 
-    <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
-<body>
+a {
+    text-decoration: none;
+    color: black;
+}
 
-<!-- MODAL UNDER CONSTRACT -->
+li {
+    list-style-type: none;
+}
 
-<div class="modal" id="myModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
+section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;   
+}
+
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-self: stretch;
+    gap: 32px;
+}
+
+.section-title .title-name h2 {
+    font-size: 64px;
+}
+
+.section-title .title-name hr {
+    border: 3px solid #ff7757;
+    margin: 20px 0px 32px 0;
+}
+
+.section-title .btn-arrows {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.btn-arrows .btn-arrow-left, .btn-arrow-right {
+    padding: 28px 20px;
+    color: white;
+    border-radius: 12px;
+}
+
+.btn-arrows .btn-arrow-left {
+    background-color: #172432;
+}
+
+.btn-arrows .btn-arrow-right {
+    background-color: #ff7757;
+}
+
+/* CARD */
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.card-item {
+    border-radius: 26px;
+}
+
+.cards-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+/* CARD */
+
+
+/* LOCALLY */
+
+
+/* MOODAL */
+.modal {
+    display: none;
+    height: 200px;
+    width: 300px;
+    background-color: rgb(194, 194, 194);
+    z-index: 10000;
+    position: sticky;
+    top: 30%;
+    left: 70%;
+    padding: 20px;
+}
+
+.modal .modal-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.modal span {
+    color: rgb(231, 6, 6);
+}
+
+.modal .btn-close {
+    padding: 10px 20px;
+    background-color: rgb(231, 6, 6);
+    border: none;
+    border-radius: 8px;
+    color: #FFE4DD;
+}
+
+/* MOODAL */
+
+/* NABVAR */
+
+header {
+    /* position: relative; */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    padding: 32px 182px;
+    background-color: #FFE4DD;
+}
+
+.navbar .brand-name {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.navbar span {
+    color: #ff7757;
+}
+
+.navbar .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    color: #ff7757;
+}
+
+.navbar .btn-login-signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+    font-size: 20px;
+}
+
+.btn-signup {
+    border: none;
+    border-radius: 12px;
+    background-color: #ff7757;
+    padding: 20px 32px;
+}
+
+.navbar #btn-bars {
+    display: none;
+}
+
+header .dropdown-menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    top: 102px;
+    right: 6px;
+    width: 300px;
+    background-color: #FFE4DD;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 0;
+
+    z-index: 1000;
+}
+
+header .dropdown-menu.open {
+    height: auto;
+    padding-top: 20px;
+}
+
+header .dropdown-menu .btn-signup {
+    padding: 20px 126px;
+}
+
+/* NAVBAR */
+
+/* HERO SECTION */
+.hero-section {
+    height: 1194px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 170px;
+    padding: 100px 0;
+    background-image: url(/images/background-image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-section .hero-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    gap: 16px;
+    padding: 0 0 0 182px;
+    color: #fff;
+}
+
+.hero-title p {
+    font-size: 84px;
+}
+
+.hero-title .title-small {
+    font-size: 24px;
+}
+
+.hero-section .booking-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1473px;
+    background-color: white;
+    padding: 0 0 0 182px;
+}
+
+.booking-block .item-block {
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+}
+
+.booking-block .row-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+.booking-block .row-block label {
+    text-transform: uppercase;
+}
+
+.booking-block .row-block input {
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+
+.booking-block .btn-booking {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    background-color: #ff7757;
+    /* width: 170px; */
+    padding: 60px 20px;
+}
+
+.booking-block, .btn-booking {
+    border-radius: 0 20px 20px 0;
+}
+
+/* HERO SECTION */
+
+/* EXPLOE SECTION */
+.explore-section {
+    gap: 100px;
+    padding: 140px 0 140px 182px;
+}
+
+.explore-section .section-title {
+    padding: 0 182px 0 0;
+}
+
+.explore-section .title-name hr {
+    width: 368px;
+}
+
+.explore-section .card-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 661px;
+    width: 497px;
+    padding: 40px 24px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.explore-section .text-card {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    color: #fff; 
+}
+
+.explore-section .card-1 {
+    background-image: url(/images/Wawa-Dam.jpg);
+}
+
+.explore-section .card-2 {
+    background-image: url(/images/falls.webp);
+}
+
+.explore-section .card-3 {
+    background-image: url(/images/cave.webp);
+}
+
+.explore-section .card-4 {
+    background-image: url(/images/mt-parawagan.jpg);
+}
+
+.explore-section .card-5 {
+    background-image: url(/images/mt-lubog_1.jpg);
+}
+
+/* OFFER SECTION */
+.offer-section {
+    gap: 100px;
+    padding: 140px 182px;
+}
+
+.offer-section .title-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.offer-section .title-name hr {
+    width: 244px;
+}
+
+.offer-section .card-item {
+    flex: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
     
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">warning</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-        
-            <!-- Modal body -->
-            <div class="modal-body">
-                This Features is under constraction
-            </div>
-        
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-            </div>
-        
-            </div>
-        </div>
-    </div>
-
-    <!-- NAVIGATION -->
-    <header>
-        <nav class="navbar">
-            <a class="brand-name" href=""><h1>Uncle<span>Explorer</span></h1></a>
-    
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#home-menu">Home</a></li>
-                <li class="nav-item"><a href="#explore-menu">Explore</a></li>
-                <li class="nav-item"><a href="#travel-menu">Travel</a></li>
-                <li class="nav-item"><a href="#guide-menu">Guide</a></li>
-                <li class="nav-item"><a href="#feedback-menu">Testimonial</a></li>
-            </ul>
-    
-            <div class="btn-login-signup">
-                <a class="btn-login" href="" data-bs-toggle="modal" data-bs-target="#myModal">Log In</a>
-                <button class="btn-signup" data-bs-toggle="modal" data-bs-target="#myModal">Sign Up</button>
-            </div>
-    
-            <div id="btn-bars" onclick="bars()">
-                <i class="fa-solid fa-bars fa-2xl btn-icon-bars"></i>
-            </div>
-        </nav>
-    
-        <div class="dropdown-menu">
-            <li class="nav-item"><a href="#">Home</a></li>
-            <li class="nav-item"><a href="#explore-menu">Explore</a></li>
-            <li class="nav-item"><a href="travel-menu">Travel</a></li>
-            <li class="nav-item"><a href="guide-menu">Guide</a></li>
-            <li class="nav-item"><a href="feedback-menu">Testimonialt</a></li>
-            <li class="nav-item"><a class="btn-login" href="" data-bs-toggle="modal" data-bs-target="#myModal">Log In</a></li>
-            <li class=""><button class="btn-signup" data-bs-toggle="modal" data-bs-target="#myModal">Sign Up</button></li>
-        </div>
-    </header>
-
-    <section class="hero-section">
-        <div class="hero-text">
-            <p class="hero-title">Start your unforgettable <br> journey with us.</p>
-            <p class="hero-paragraph">The best travel for your journey begins now.</p>
-        </div>
-        
-        <div class="content-block">
-            <div class="col-group">
-                <div class="row">
-                    <div class="col">
-                        <label for="destination">DESTINATION</label>
-                        <input type="text" name="destination">
-                    </div>
-        
-                    <div class="col">
-                        <label for="person">PERSON</label>
-                        <input type="number" name="person" id="">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        <label for="checkin">CHECK IN</label>
-                        <input type="date" name="checkin" id="">
-                    </div>
-        
-                    <div class="col">
-                        <label for="checkout">CHECK OUT</label>
-                        <input type="date" name="checkout" id="">
-                    </div>
-                </div>
-    
-            </div>
-            
-            <button class="btn-bookNow "data-bs-toggle="modal" data-bs-target="#myModal">Book Now</button>
-        </div>
-    </section>
-
-    <!-- EXPLORE SECTION -->
-    <section class="explore-section" id="explore-menu">
-        <div class="title">
-            <div class="title-block">
-                <div class="title-design">
-                    <h2>Popular Destination</h2>
-                    <hr>
-                </div>
-                <p>Most popular destination here in the Rodriguez, Rizal.</p>
-            </div>
-
-            <div class="btn-arrow btn-explore">
-                <div class="btn-arrow-left btn-explore">
-                    <i class="fa-solid fa-less-than"></i>
-                </div>
-                <div class="btn-arrow-right btn-explore">
-                    <i class="fa-solid fa-greater-than"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="swiper mySwiper" id="cards-container">
-            <div class="swiper-wrapper" id="cards-wrapper">
-                <div class="swiper-slide explore-card-1" id="card">
-                    <h3 class="image-name">Falls</h3>
-                    <h3 class="image-location">Montalban, Rizal</h3>
-                </div>
-
-                <div class="swiper-slide explore-card-2" id="card">
-                    <h3 class="image-name">Cave</h3>
-                    <h3 class="image-location">San Rafael, Montalban</h3>
-                </div>
-
-                <div class="swiper-slide explore-card-3" id="card">
-                    <h3 class="image-name">Jets View Deck</h3>
-                    <h3 class="image-location">Mt. Parawagan, San Rafael, Montalban</h3>
-                </div>
-
-                <div class="swiper-slide explore-card-4" id="card">
-                    <h3 class="image-name">Town Center</h3>
-                    <h3 class="image-location">San Jose, Montalban</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TRAVEL SECTION -->
-    <section class="travel-section" id="travel-menu">
-        <div class="title">
-            <div class="btn-arrow btn-travel">
-                <div class="btn-arrow-left btn-travel">
-                    <i class="fa-solid fa-less-than"></i>
-                </div>
-                <div class="btn-arrow-right btn-travel">
-                    <i class="fa-solid fa-greater-than"></i>
-                </div>
-            </div>
-
-            <div class="title-block">
-                <div class="title-design travel">
-                    <h2>Special Offer</h2>
-                    <hr>
-                </div>
-                <p>Check out our special offer and discounts.</p>
-            </div>
-        </div>
-
-        <div class="swiper swiperTravel" id="cards-container">
-            <div class="swiper-wrapper" id="cards-swiper">
-                <div class="swiper-slide" id="card-travel">
-                    <div class="image-container card-1"></div>
-                    <div class="text-block">
-                        <h3>MT. BINICAYAN</h3>
-                        <ul>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                        </ul>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui unde ex assumenda. Ullam, consequuntur minima saepe tempora architecto, quae accusamus cum amet suscipit modi ex, deserunt molestias omnis ab velit.
-                        </p>
-                        <div class="details">
-                            <h4>from<span>$73.5</span></h4>
-                            <a href=""><button data-bs-toggle="modal" data-bs-target="#myModal">Book Now</button></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide " id="card-travel">
-                    <div class="image-container card-2"></div>
-                    <div class="text-block">
-                        <h3>MT. PAMITINAN</h3>
-                        <ul>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                        </ul>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga atque soluta a modi quis, distinctio deleniti iure dolores, pariatur sed veniam illum ullam neque voluptas alias nam, incidunt ea ut!
-                        </p>
-                        <div class="details">
-                            <h4>from<span>$78.5</span></h4>
-                            <button data-bs-toggle="modal" data-bs-target="#myModal">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" id="card-travel">
-                    <div class="image-container card-3"></div>
-                    <div class="text-block">
-                        <h3>MT. LAGYO</h3>
-                        <ul>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                        </ul>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam nisi ad sapiente ullam modi placeat illum impedit earum fugiat id voluptatibus ipsum eos qui, quo repellat ut deleniti aliquid velit!
-                        </p>
-                        <div class="details">
-                            <h4>from<span>$73.5</span></h4>
-                            <button data-bs-toggle="modal" data-bs-target="#myModal">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" id="card-travel">
-                    <div class="image-container card-4"></div>
-                    <div class="text-block">
-                        <h3>MT. HAPUNANG BANOY</h3>
-                        <ul>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                        </ul>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum assumenda quis dolorem saepe praesentium velit aliquam! Quidem quasi vitae quis laborum repudiandae neque consequuntur unde doloribus! Sunt sequi maiores doloremque?
-                        </p>
-                        <div class="details">
-                            <h4>from<span>$73.5</span></h4>
-                            <button data-bs-toggle="modal" data-bs-target="#myModal">Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" id="card-travel">
-                    <div class="image-container card-5"></div>
-                    <div class="text-block">
-                        <h3>MT. PARAWAGAN</h3>
-                        <ul>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                        </ul>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel voluptatum commodi architecto accusamus nam dolores facere, tenetur ratione quod reiciendis magnam dolor eaque, earum aliquam tempore aliquid deserunt placeat quidem.
-                        </p>
-                        <div class="details">
-                            <h4>from<span>$73.5</span></h4>
-                            <button>Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" id="card-travel">
-                    <div class="image-container card-6"></div>
-                    <div class="text-block">
-                        <h3>MT. MATAMIS NA LUYA</h3>
-                        <ul>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                        </ul>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel voluptatum commodi architecto accusamus nam dolores facere, tenetur ratione quod reiciendis magnam dolor eaque, earum aliquam tempore aliquid deserunt placeat quidem.
-                        </p>
-                        <div class="details">
-                            <h4>from<span>$73.5</span></h4>
-                            <button data-bs-toggle="modal" data-bs-target="#myModal">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" id="card-travel">
-                    <div class="image-container card-7"></div>
-                    <div class="text-block">
-                        <h3>MT. AYAAS</h3>
-                        <ul>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                        </ul>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel voluptatum commodi architecto accusamus nam dolores facere, tenetur ratione quod reiciendis magnam dolor eaque, earum aliquam tempore aliquid deserunt placeat quidem.
-                        </p>
-                        <div class="details">
-                            <h4>from<span>$73.5</span></h4>
-                            <button data-bs-toggle="modal" data-bs-target="#myModal">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" id="card-travel">
-                    <div class="image-container card-8"></div>
-                    <div class="text-block">
-                        <h3>MT. ORO</h3>
-                        <ul>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                        </ul>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel voluptatum commodi architecto accusamus nam dolores facere, tenetur ratione quod reiciendis magnam dolor eaque, earum aliquam tempore aliquid deserunt placeat quidem.
-                        </p>
-                        <div class="details">
-                            <h4>from<span>$73.5</span></h4>
-                            <button data-bs-toggle="modal" data-bs-target="#myModal">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" id="card-travel">
-                    <div class="image-container card-9"></div>
-                    <div class="text-block">
-                        <h3>MT. SIPIT ULANG</h3>
-                        <ul>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                        </ul>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel voluptatum commodi architecto accusamus nam dolores facere, tenetur ratione quod reiciendis magnam dolor eaque, earum aliquam tempore aliquid deserunt placeat quidem.
-                        </p>
-                        <div class="details">
-                            <h4>from<span>$73.5</span></h4>
-                            <button data-bs-toggle="modal" data-bs-target="#myModal"Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" id="card-travel">
-                    <div class="image-container card-10"></div>
-                    <div class="text-block">
-                        <h3>MT. LUBOG</h3>
-                        <ul>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                        </ul>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel voluptatum commodi architecto accusamus nam dolores facere, tenetur ratione quod reiciendis magnam dolor eaque, earum aliquam tempore aliquid deserunt placeat quidem.
-                        </p>
-                        <div class="details">
-                            <h4>from<span>$73.5</span></h4>
-                            <button>Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" id="card-travel">
-                    <div class="image-container card-11"></div>
-                    <div class="text-block">
-                        <h3>MT. BALAGBAG</h3>
-                        <ul>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                        </ul>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel voluptatum commodi architecto accusamus nam dolores facere, tenetur ratione quod reiciendis magnam dolor eaque, earum aliquam tempore aliquid deserunt placeat quidem.
-                        </p>
-                        <div class="details">
-                            <h4>from<span>$73.5</span></h4>
-                            <button> data-bs-toggle="modal" data-bs-target="#myModal"Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" id="card-travel">
-                    <div class="image-container card-5"></div>
-                    <div class="text-block">
-                        <h3>MT. PARAWAGAN</h3>
-                        <ul>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                        </ul>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel voluptatum commodi architecto accusamus nam dolores facere, tenetur ratione quod reiciendis magnam dolor eaque, earum aliquam tempore aliquid deserunt placeat quidem.
-                        </p>
-                        <div class="details">
-                            <h4>from<span>$73.5</span></h4>
-                            <button data-bs-toggle="modal" data-bs-target="#myModal">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" id="card-travel">
-                    <div class="image-container card-5"></div>
-                    <div class="text-block">
-                        <h3>MT. PARAWAGAN</h3>
-                        <ul>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                        </ul>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel voluptatum commodi architecto accusamus nam dolores facere, tenetur ratione quod reiciendis magnam dolor eaque, earum aliquam tempore aliquid deserunt placeat quidem.
-                        </p>
-                        <div class="details">
-                            <h4>from<span>$73.5</span></h4>
-                            <button>Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" id="card-travel">
-                    <div class="image-container card-5"></div>
-                    <div class="text-block">
-                        <h3>MT. PARAWAGAN</h3>
-                        <ul>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                        </ul>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel voluptatum commodi architecto accusamus nam dolores facere, tenetur ratione quod reiciendis magnam dolor eaque, earum aliquam tempore aliquid deserunt placeat quidem.
-                        </p>
-                        <div class="details">
-                            <h4>from<span>$73.5</span></h4>
-                            <button data-bs-toggle="modal" data-bs-target="#myModal">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-    
-            </div>
-        </div>
-    </section>
-
-    <!-- TOUR GUIDE -->
-    <section class="tourGuide-section" id="guide-menu">
-        <div class="title">
-            <div class="title-block">
-                <div class="title-design">
-                    <h2>Tour Guide</h2>
-                    <hr>
-                </div>
-                <p>Our best and handsome tour guide.</p>
-            </div>
-        </div>
-
-        <div class="content">
-            <div class="imageContainer">
-
-            </div>
-            
-            <div class="content-text">
-                <h3>Uncle the Explorer</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam optio non consequuntur quis ut inventore nesciunt nihil ipsum pariatur laborum, provident temporibus architecto voluptatibus rem, asperiores quam ducimus! Qui, libero?<p>
-
-                <h4>Follow me on:</h4>
-                <ul>
-                    <li><i class="fa-brands fa-facebook""></i></li>
-                    <li><i class="fa-brands fa-instagram"></i></li>
-                    <li><i class="fa-brands fa-youtube"></i></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- DESTINATION GALLERY -->
-    <section class="gallery-section">
-        <div class="title">
-            <div class="title-block">
-                <div class="title-design">
-                    <h2>Destination Gallery</h2>
-                    <hr>
-                </div>
-                <p>Our photo gallery on trip.</p>
-            </div>
-
-            <div class="btn-arrow btn-gallery">
-                <div class="btn-arrow-left btn-gallery">
-                    <i class="fa-solid fa-less-than"></i>
-                </div>
-                <div class="btn-arrow-right btn-gallery">
-                    <i class="fa-solid fa-greater-than"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="swiper swiperGallery" id="cards-container">
-            <div class="swiper-wrapper" id="gallery-swiper">
-                <div class="swiper-slide gallery-card-1" id="card-gallery"></div>
-                <div class="swiper-slide gallery-card-2" id="card-gallery"></div>
-                <div class="swiper-slide gallery-card-3" id="card-gallery"></div>
-                <div class="swiper-slide gallery-card-4" id="card-gallery"></div>
-                <div class="swiper-slide gallery-card-5" id="card-gallery"></div>
-                <div class="swiper-slide gallery-card-1" id="card-gallery"></div>
-                <div class="swiper-slide gallery-card-1" id="card-gallery"></div>
-                <div class="swiper-slide gallery-card-1" id="card-gallery"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIAL SECTION -->
-    <section class="testimonial-section">
-        <div class="title">
-            <div class="title-block">
-                <div class="title-design">
-                    <h2>Traveler's Experience</h2>
-                    <hr>
-                </div>
-                <p>Here some awesome feedback from our travelers.</p>
-            </div>
-        </div>
-
-        <div class="swiper swiperTestimonial" id="cards-container">
-            <div class="swiper-wrapper" id="testimonial-swiper">
-                <div class="swiper-slide card-1" id="card">
-                    
-                    <p>
-                        But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system and expound the actual teachings of the great explorer of the truth, the master- builder of human happiness.
-                    </p>
-
-                    <ul class="rating">
-                        <li class="star-item">
-                            <i class="fa-solid fa-star"></i>
-                        </li>
-
-                        <li class="star-item">
-                            <i class="fa-solid fa-star"></i>
-                        </li>
-
-                        <li class="star-item">
-                            <i class="fa-solid fa-star"></i>
-                        </li>
-
-                        <li class="star-item">
-                            <i class="fa-solid fa-star"></i>
-                        </li>
-
-                        <li class="star-item">
-                            <i class="fa-solid fa-star"></i>
-                        </li>
-                    </ul>
-
-                    <div class="info">
-                        <div class="info-name-occup">
-                            <h3>John Paul Sauco</h3>
-                            <h4>Web Designer</h4>
-                        </div>
-
-                        <div class="avatar avatar-1"></div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide card-1" id="card">
-                    
-                    <p>
-                        But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system and expound the actual teachings of the great explorer of the truth, the master- builder of human happiness.
-                    </p>
-
-                    <ul class="rating">
-                        <li class="star-item">
-                            <i class="fa-solid fa-star"></i>
-                        </li>
-
-                        <li class="star-item">
-                            <i class="fa-solid fa-star"></i>
-                        </li>
-
-                        <li class="star-item">
-                            <i class="fa-solid fa-star"></i>
-                        </li>
-
-                        <li class="star-item">
-                            <i class="fa-solid fa-star"></i>
-                        </li>
-
-                        <li class="star-item">
-                            <i class="fa-solid fa-star"></i>
-                        </li>
-                    </ul>
-
-                    <div class="info">
-                        <div class="info-name-occup">
-                            <h3>Albert Santelices</h3>
-                            <h4>Frontend Developer</h4>
-                        </div>
-
-                        <div class="avatar avatar-2"></div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide card-1" id="card">
-                    
-                    <p>
-                        But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system and expound the actual teachings of the great explorer of the truth, the master- builder of human happiness.
-                    </p>
-
-                    <ul class="rating">
-                        <li class="star-item">
-                            <i class="fa-solid fa-star"></i>
-                        </li>
-
-                        <li class="star-item">
-                            <i class="fa-solid fa-star"></i>
-                        </li>
-
-                        <li class="star-item">
-                            <i class="fa-solid fa-star"></i>
-                        </li>
-
-                        <li class="star-item">
-                            <i class="fa-solid fa-star"></i>
-                        </li>
-
-                        <li class="star-item">
-                            <i class="fa-solid fa-star"></i>
-                        </li>
-                    </ul>
-
-                    <div class="info">
-                        <div class="info-name-occup">
-                            <h3>Danielito Septimo</h3>
-                            <h4>Backend Developer</h4>
-                        </div>
-
-                        <div class="avatar avatar-3"></div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide card-1" id="card">
-                    
-                    <p>
-                        But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system and expound the actual teachings of the great explorer of the truth, the master- builder of human happiness.
-                    </p>
-
-                    <ul class="rating">
-                        <li class="star-item">
-                            <i class="fa-solid fa-star"></i>
-                        </li>
-
-                        <li class="star-item">
-                            <i class="fa-solid fa-star"></i>
-                        </li>
-
-                        <li class="star-item">
-                            <i class="fa-solid fa-star"></i>
-                        </li>
-
-                        <li class="star-item">
-                            <i class="fa-solid fa-star"></i>
-                        </li>
-
-                        <li class="star-item">
-                            <i class="fa-solid fa-star"></i>
-                        </li>
-                    </ul>
-
-                    <div class="info">
-                        <div class="info-name-occup">
-                            <h3>Adrian Galon</h3>
-                            <h4>Software Engineer</h4>
-                        </div>
-
-                        <div class="avatar avatar-4"></div>
-                    </div>
-                </div>
-            </div>           
-        </div>
-
-        <div class="btn-arrow btn-testimonial">
-            <div class="btn-arrow-left btn-testimonial">
-                <i class="fa-solid fa-less-than"></i>
-            </div>
-            <div class="btn-arrow-right btn-testimonial">
-                <i class="fa-solid fa-greater-than"></i>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER SECTION -->
-    <footer class="footer-section">
-        <div class="footer-content">
-            <div class="logo">
-                <h4>Uncle<span>Explorer</span></h4>
-                <p>Copyright © UncleExplorer 2023 All rights reserved</p>
-            </div>
-
-            <div class="menu">
-                <h4>Menu</h4>
-                <ul>
-                    <li>Home</li>
-                    <li>Explore</li>
-                    <li>Travel</li>
-                    <li>Gallery</li>
-                    <li>Testimonial</li>
-                </ul>
-            </div>
-
-            <div class="information">
-                <h4>Informantion</h4>
-                <ul>
-                    <li>Destination</li>
-                    <li>Supports</li>
-                    <li>Terms & Conditions</li>
-                    <li>Privacy</li>
-                </ul>
-            </div>
-
-            <div class="contact">
-                <h4>Contact</h4>
-                <ul>
-                    <li>+639123456789</li>
-                    <li>email@gmail.com</li>
-                    <li>St. 143, Di Ka minahal</li>
-                </ul>
-            </div>
-
-            <div class="follow">
-                <h4>Follow us on</h4>
-                <ul>
-                    <li><i class="fa-brands fa-facebook""></i></li>
-                    <li><i class="fa-brands fa-instagram"></i></li>
-                    <li><i class="fa-brands fa-youtube"></i></li>
-                </ul>
-            </div>
-        </div>
-
-    </footer>
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="/swiper-bundle.min.js"></script>
-    <script src="/script.js"></script>
-</body>
-</html>
+}
+
+.offer-section .image-content  {
+    height: 286px;
+    width: 497px;
+    object-fit: cover;
+    border-radius: 26px 26px 0 0;
+}
+
+.offer-section .text-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff8f1;
+    border-radius: 0 0 26px 26px;
+    gap: 24px;
+    padding: 40px 24px;
+}
+
+.offer-section .content-location-rating {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.offer-section .content-location {
+    font-size: 28px;
+}
+
+.offer-section .text-content .content-rating {
+    display: flex;
+    gap: 4px;
+    color: #FFC107;
+}
+
+.offer-section .content-description {
+    font-size: 18px;
+}
+
+.offer-section .content-booking {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.offer-section .booking-price {
+    font-size: 20px;
+}
+
+.offer-section .price-color {
+    font-size: 40px;
+    color: #ff7757;
+}
+
+.offer-section .btn-booking {
+    background-color: #ff7757;
+    color: #fff8f1;
+    border-radius: 12px;
+    border: none;
+    padding: 20px 24px;
+}
+/* OFFER SECTION */
+
+/* TOUR GUIDE SECTION */
+.tourGuide-section {
+    padding: 140px 182px; 
+    gap: 100px;
+}
+
+.tourGuide-section .content-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+.tourGuide-section .image-content {
+    height: 873px;
+    width: 763px;
+    border-radius: 26px;
+}
+
+.tourGuide-section .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 80px;
+}
+
+.tourGuide-section .text-name {
+    font-size: 54px;
+}
+
+.tourGuide-section .text-description {
+    font-size: 24px;
+}
+
+.tourGuide-section .social-media {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tourGuide-section .social-list {
+    font-size: 24px;
+    display: flex;
+    gap: 10px;
+}
+
+
+/* TOUR GUIDE SECTION */
+
+/* GALLERY SECTION */
+.gallery-section {
+    gap: 100px;
+    padding: 140px 0 140px 182px;
+}
+ 
+.gallery-section .section-title {
+    padding: 0 182px 0 0;
+}
+
+.gallery-section .title-name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.gallery-section .title-name hr {
+    width: 286px;
+}
+
+.gallery-section .card-item {
+    height: 570px;
+    width: 365px;
+    background-color: yellow;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.gallery-section .card-1 {
+    background-image: url(/images/gallery-1\ \(1\).jpg);
+}   
+
+.gallery-section .card-2 {
+    background-image: url(/images/gallery-1\ \(2\).jpg);
+}
+
+.gallery-section .card-3 {
+    background-image: url(/images/gallery-2\ \(1\).jpg);
+}
+
+.gallery-section .card-4 {
+    background-image: url(/images/gallery-2\ \(2\).jpg);
+}
+
+.gallery-section .card-5 {
+    background-image: url(/images/gallery-2\ \(3\).jpg);
+}
+
+/* GALLERY SECTION */
+
+/* Testimonial SECTION */
+.testimonial-section {
+    padding: 140px 182px; 
+    gap: 100px;
+}
+
+.testimonial-section .card-item {
+    width: 663px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 60px 40px;
+    background-color: #fff8f1;
+}
+
+.testimonial-section .item-rating {
+    color: #FFC107;
+    display: flex;
+    gap: 4px;
+}
+
+.testimonial-section .person-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.testimonial-section .avatar-icon {
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+    border-radius: 100%;
+}
+/* Testimonial SECTION */
+
+/* FOOTER SECTION */ 
+.footer-section {
+    display: flex;
+    align-items: flex-start;
+    padding: 240px 182px;
+    background-color: #172432;
+    color: #fff8f1;
+}
+
+.footer-section .logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.footer-section .logo h3 {
+    font-size: 28px;
+}
+
+.footer-section .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-section .footer-content h3 {
+    font-size: 24px;
+}
+
+.footer-section .footer-content ul, .copyright {
+    font-size: 18px;
+} 
+
+.footer-section .footer-content .header-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-section .social-media {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-section .social-media .list-item {
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 1440px) {
+    body {
+        max-width: 1440px;
+    }
+
+    .navbar {
+        padding: 32px;
+    }
+
+    .hero-section .booking-block {
+        width: 1205px;
+        padding: 0 0 0 32px;
+    } 
+
+    .explore-section {
+        padding: 140px 32px;
+    }
+
+    .offer-section {
+        padding: 140px 32px;
+    }
+
+    .tourGuide-section {
+        padding: 140px 32px;
+    }
+
+    .gallery-section {
+        padding: 140px 0 140px 182;   
+    }
+
+    .testimonial-section {
+        padding: 140px 32px;
+    }
+
+    .footer-section {
+        padding: 240px 32px;
+    }
+}
+
+@media only screen and (max-width: 1152px) {
+    body {
+        width: 1152px;
+    }
+
+    .hero-section {
+        height: 880px;
+    }
+
+    .hero-title p {
+        font-size: 64px;
+    }
+
+    .hero-section .booking-block {
+        width: 1056px;
+    }
+
+    .explore-section {
+        padding: 100px 32px;
+    }
+
+    .offer-section {
+        padding: 100px 32px;
+    }
+
+    .offer-section .image-content {
+        width: 341px;
+    }
+
+    .offer-section .text-content {
+        padding: 20px 24px;
+    }
+
+    .tourGuide-section {
+        padding: 100px 32px;
+    }
+
+    .tourGuide-section .image-content {
+        width: 686px;
+        height: 528px;
+    }
+
+    .gallery-section {
+        padding: 100px 32px;
+    }
+
+    .gallery-section .card-item {
+        height: 351px;
+        width: 248px;
+    }
+
+    .testimonial-section {
+        padding: 100px 32px 200px 32px;
+    }
+
+    .testimonial-section .avatar-icon {
+        height: 50px;
+        width: 50px;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        width: 768px;
+    }
+
+    .btn-arrows {
+        position: absolute;
+        bottom: 0;
+        right: 44%;
+    }
+
+    .title-name {
+        width: 288px;
+    }
+
+    .navbar #btn-bars {
+        display: block;
+    }
+
+    .navbar .nav-menu, .navbar .btn-login-signup {
+        display: none;
+    }
+
+    .hero-section {
+        height: 789px;
+    }
+
+    .hero-title p {
+        font-size: 54px;
+    }
+
+    .hero-section .booking-block {
+        width: 659px;
+    }
+
+    .booking-block .row-block input {
+        padding: 0;
+    }
+
+    .explore-section {
+        padding: 80px 20px 172px 20px;
+    }
+
+    .explore-section .card-item {
+        width: 100%;
+        height: 456px;
+    }
+
+    .offer-section {
+        padding: 80px 20px 172px 20px;
+    }
+
+    .offer-section .title-name {
+        align-items: flex-start;
+    }
+
+    .offer-section .image-content {
+        width: 728px;
+    }
+
+    .tourGuide-section {
+        padding: 80px 20px;
+    }
+
+    .tourGuide-section .content-block {
+        flex-direction: column;
+    }
+
+    .tourGuide-section .image-content {
+        height: 555px;
+        width: 728px;
+    }
+
+    .gallery-section {
+        padding: 80px 20px 172px 20px;
+    }
+
+    .testimonial-section {
+        padding: 80px 20px 172px 20px;
+    }
+
+    .footer-section {
+        flex-direction: column;
+        gap: 60px;
+        margin-top: 80px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    body {
+        width: 320px;
+    }
+
+    .btn-arrows {
+        position: absolute;
+        bottom: 0;
+        right: 25%;
+    }
+
+    .navbar .brand-name {
+        font-size: 24px;
+    }
+
+    .hero-section {
+        padding: 0px 16px 100px 16px;
+        height: 1210px;
+    }
+
+    .hero-section .hero-title {
+        padding: 0;
+        text-align: center;
+    }
+
+    .hero-title .title-small {
+        font-size: 18px;
+    }
+
+    .hero-section .booking-block {
+        padding: 0;
+        flex-direction: column;
+        height: 595px;
+        width: 288px;
+    }
+
+    .booking-block .item-block {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .booking-block .col-group {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .booking-block .btn-booking {
+        width: none;
+    }
+
+    .booking-block, .btn-booking {
+        border-radius: 0 0 20px 20px;
+    }
+
+    .explore-section {
+        padding: 80px 16px 125px 16px;
+    }
+
+    .section-title .title-name h2 {
+        font-size: 40px;
+    }
+
+    .explore-section .title-name hr {
+        width: 227px;
+    }
+
+    .explore-section .card-item  {
+        height: 320px;
+        width: 288px;
+    }
+
+    .offer-section {
+        padding: 80px 16px 125px 16px;
+    }
+
+    .offer-section .title-name {
+        align-items: flex-start;
+    }
+
+    .offer-section .image-content {
+        width: 288px;
+    }
+
+    .tourGuide-section {
+        padding: 80px 16px 125px 16px;
+    }
+
+    .tourGuide-section .image-content {
+        height: 314px;
+        width: 288px;
+    }
+
+    .tourGuide-section .text-name {
+        font-size: 40px;
+    }
+
+    .tourGuide-section .text-description {
+        font-size: 18px;
+    }
+
+    .gallery-section {
+        padding: 80px 16px 125px 16px;
+    }
+
+    .gallery-section .card-item {
+        height: 320px;
+        width: 288px;
+    }
+
+    .testimonial-section {
+        padding: 80px 16px 125px 16px;
+
+    }
+
+    .testimonial-section .card-item {
+        width: 280px;
+    }
+
+    .footer-section {
+        padding: 80px 16px 80px 16px;
+    }
+
+}

@@ -1,62 +1,52 @@
-const btnToggle = document.getElementById('btn-bars');
-const dropDownMenu = document.querySelector('.dropdown-menu');
-let swiperExplore, swiperTravel, swiperGallery, swiperTestimonial;
 
-// btnToggle.onclick = function () {
-//     dropDownMenu.classList.toggle('open');
-// }
+const slideNo = window.innerWidth <= 768 ? 1 : window.innerWidth <= 1440 ? 3 : 4;
+const slide2 = window.innerWidth <= 1440 ? 3 : 2;
+
+const exploreSwiper = new Swiper(".explore-swiper", {
+  slidesPerView: slideNo,
+  spaceBetween: 0,
+  loop: true,
+  navigation: {
+    nextEl: ".nxt-explore-swiper",
+    prevEl: ".pre-explore-swiper",
+  },
+});
+
+const offerSwiper = new Swiper(".offer-swiper", {
+  slidesPerView: slide2,
+  spaceBetween: 0,
+  loop: true,
+  navigation: {
+    nextEl: ".nxt-offer-swiper",
+    prevEl: ".pre-offer-swiper",
+  },
+});
+
+const gallerySwiper = new Swiper(".gallery-swiper", {
+  slidesPerView: slideNo,
+  spaceBetween: 0,
+  loop: true,
+  navigation: {
+    nextEl: ".nxt-gallery-swiper",
+    prevEl: ".pre-gallery-swiper",
+  },
+});
+
+const testimonialSwiper = new Swiper(".testimonial-swiper", {
+  slidesPerView: slideNo,
+  spaceBetween: 0,
+  loop: true,
+  navigation: {
+    nextEl: ".nxt-testimonial-swiper",
+    prevEl: ".pre-testimonial-swiper",
+  },
+});
+
+
+
+const dropDownMenu = document.querySelector('.dropdown-menu');
+
 
 function bars() {
-    dropDownMenu.classList.toggle('open');
-
+  dropDownMenu.classList.toggle('open')
 }
-
-function initSwipers() {
-
-    const slidesPerView = window.innerWidth <= 320  ? 1 : window.innerWidth <= 1152 ? 2 : window.innerWidth <= 1920 ? 3 : 0;
-    const spaceBetween = window.innerWidth <= 320 ? 20 : window.innerWidth <= 768 ? 20 : window.innerWidth <= 1152 ? 9 : window.innerWidth <= 1440 ? 20 : window.innerWidth <= 1920 ? 30 : 0;
-
-    swiperExplore = new Swiper(".mySwiper", {
-        slidesPerView,
-        spaceBetween,
-        loop: true,
-        navigation: {
-          nextEl: ".btn-arrow-right.btn-explore",
-          prevEl: ".btn-arrow-left.btn-explore",
-        },
-    });
-
-    swiperTravel = new Swiper(".swiperTravel", {
-        slidesPerView,
-        spaceBetween,
-        loop: true,
-        navigation: {
-            nextEl: ".btn-arrow-right.btn-travel",
-            prevEl: ".btn-arrow-left.btn-travel",
-        },
-    });
-
-    swiperGallery = new Swiper(".swiperGallery", {
-        slidesPerView,
-        spaceBetween: 30,
-        loop: true,
-        navigation: {
-            nextEl: ".btn-arrow-right.btn-gallery",
-            prevEl: ".btn-arrow-left.btn-gallery",
-        },
-    });
-
-    swiperTestimonial = new Swiper(".swiperTestimonial", {
-        slidesPerView,
-        spaceBetween: 20,
-        loop: true,
-        navigation: {
-            nextEl: ".btn-arrow-right.btn-testimonial",
-            prevEl: ".btn-arrow-left.btn-testimonial",
-        },
-    });
-}
-
-window.addEventListener('load', initSwipers);
-
-window.addEventListener('resize', initSwipers);
